@@ -208,7 +208,10 @@ var toGeoJSON = (function() {
             }
             function getPlacemark(root) {
                 var geomsAndTimes = getGeometry(root), i,
-                    properties = { layerName : nodeVal(get1(root.parentNode, 'name'))},
+                    properties = { 
+                        layerName : nodeVal(get1(root.parentNode, 'name')),
+                        layerNameFolder : nodeVal(get1(root.parentNode.parentNode, 'name'))
+                    },
                     name = nodeVal(get1(root, 'name')),
                     address = nodeVal(get1(root, 'address')),
                     styleUrl = nodeVal(get1(root, 'styleUrl')),
